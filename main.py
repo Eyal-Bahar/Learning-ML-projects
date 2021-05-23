@@ -27,5 +27,13 @@ if __name__ == '__main__':
     ## pridictions:
     predictions = lm.predict(X_test)
     print(predictions)
+    plt.figure(2)
     plt.scatter(y_test, predictions)
+    plt.figure(3)
+    sns.displot(y_test-predictions)
 
+    ## Regression evlaution metrics
+    from sklearn import metrics
+    metrics.mean_squared_error(y_test, predictions)
+    root_mean_squared_error = np.sqrt(metrics.mean_squared_error(y_test, predictions))
+    

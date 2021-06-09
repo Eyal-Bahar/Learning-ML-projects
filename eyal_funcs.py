@@ -7,12 +7,12 @@ def basic_path(location='PC'):
         return "D:/Dropbox/Eyal Bahar/Phd - Tel Aviv/פייתון/udemy/python_for_DS_ML/Py_DS_ML_Bootcamp-master/Refactored_Py_DS_ML_Bootcamp-master/"
 
 
-def load_data(folder = '13-Logistic-Regression/', file_name = 'advertising.csv', PC_or_TAU = 'PC'):
+def load_data(folder = '13-Logistic-Regression/', file_name = 'advertising.csv', PC_or_TAU = 'PC', **kwargs): # ,sep=[], columns_names=[]
     ## data path
     data_folder = basic_path(PC_or_TAU)
     full_path = data_folder + folder + file_name
-    ## load data
-    return pd.read_csv(full_path)  # data
+    return pd.read_csv(full_path, **kwargs)
+
     ## General structure of data_set:
     # 'Daily Time Spent on Site': consumer time on site in minutes
     # 'Age': cutomer age in years
